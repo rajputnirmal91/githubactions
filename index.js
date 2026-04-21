@@ -1,4 +1,5 @@
 A = 10;
 B = 20;
-const count = A + B
+C = 30
+const count = A + B + C
 console.log(count)
