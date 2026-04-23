@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Run PR Review
         id: review
-        continue-on-error: true
+        continue-on-error: false
         uses: rajputnirmal91/openai-pr-reviewer@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
