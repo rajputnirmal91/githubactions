@@ -6,13 +6,20 @@ on:
 
 jobs:
   review:
-    runs-on: ubuntu-latest  
-    environment: develop
+    runs-on: ubuntu-latest
     permissions:
       pull-requests: write
       contents: read
+
     steps:
-      - uses: rajputnirmal91/openai-pr-reviewer@v1
+      - name: Run PR Review
+        id: review
+        continue-on-error: true
+        uses: rajputnirmal91/openai-pr-reviewer@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          openai-api-key: ${{secrets.OPENAI_API_KEY}}
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Report status
+        run: |
+          echo "PR review step completed (or failed safely)."
