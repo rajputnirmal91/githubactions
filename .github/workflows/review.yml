@@ -23,3 +23,7 @@ jobs:
       - name: Report status
         run: |
           echo "PR review step completed (or failed safely)."
+
+      - name: Fail if review had error
+        if: contains(steps.review.outputs, 'Failed to review code')
+        run: exit 1
