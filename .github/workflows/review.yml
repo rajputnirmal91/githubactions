@@ -4,6 +4,9 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+env:
+  ENV: develop
+
 jobs:
   review:
     runs-on: ubuntu-latest
