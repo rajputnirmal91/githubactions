@@ -14,4 +14,4 @@ jobs:
       - uses: rajputnirmal91/openai-pr-reviewer@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          openai-api-key: AIzaSyAm4mr5KEiRkhZitzNhQ123NuFPDmT7RMY
+          openai-api-key: ${{secrets.OPENAI_API_KEY}}
