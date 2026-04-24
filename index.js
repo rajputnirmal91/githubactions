@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function UserList(props) {
 const [users, setUsers] = useState([]);
-const [filter, setFilter] = useState("");
+const [filter, setFilter] = useState("")
 
 
 useEffect(() => {
